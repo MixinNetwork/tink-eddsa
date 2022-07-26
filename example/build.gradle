@@ -1,0 +1,17 @@
+plugins {
+    id 'application'
+    id 'kotlin'
+    id 'maven-publish'
+    id 'java'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(":lib")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "com.squareup.okio:okio:3.2.0"
+}
