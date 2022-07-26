@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
-    id 'maven-publish'
+    id 'maven'
     id 'java'
 }
 
@@ -22,4 +22,7 @@ dependencies {
 group = 'com.github.MixinNetwork'
 version = '0.0.1'
 
+tasks.jar {
+    archivesBaseName = "tink-eddsa"
+}
 

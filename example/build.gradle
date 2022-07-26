@@ -1,7 +1,7 @@
 plugins {
     id 'application'
     id 'kotlin'
-    id 'maven-publish'
+    id 'maven'
     id 'java'
 }
 
