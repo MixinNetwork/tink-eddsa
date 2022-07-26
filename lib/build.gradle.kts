@@ -20,6 +20,9 @@ dependencies {
 group = "com.github.MixinNetwork"
 version = "0.0.1"
 
+tasks.jar {
+    archiveBaseName.set("tink-eddsa")
+}
 
 
 
