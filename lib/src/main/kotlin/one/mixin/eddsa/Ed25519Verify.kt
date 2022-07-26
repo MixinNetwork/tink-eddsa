@@ -30,10 +30,8 @@ import one.mixin.eddsa.Ed25519.verify
  *   // Signature didn't verify.
  * }
  * ```
- *
- * @since 1.1.0
  */
-internal class Ed25519Verify(
+class Ed25519Verify(
     private val publicKey: ByteString,
 ) {
     init {

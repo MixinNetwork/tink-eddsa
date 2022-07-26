@@ -32,10 +32,8 @@ import one.mixin.eddsa.Ed25519.sign
  * val signer = Ed25519Sign(keyPair.getPrivateKey())
  * val signature = signer.sign(message)
  * ```
- *
- * @since 1.1.0
  */
-internal class Ed25519Sign private constructor(
+class Ed25519Sign private constructor(
     private val hashedPrivateKey: ByteString,
     private val publicKey: ByteString,
 ) {

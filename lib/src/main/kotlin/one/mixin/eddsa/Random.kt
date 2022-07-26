@@ -21,10 +21,8 @@ import java.security.SecureRandom
 
 /**
  * A simple wrapper of [SecureRandom].
- *
- * @since 1.0.0
  */
-internal object Random {
+object Random {
     private val localRandom: ThreadLocal<SecureRandom> = object : ThreadLocal<SecureRandom>() {
         override fun initialValue(): SecureRandom = newDefaultSecureRandom()
     }

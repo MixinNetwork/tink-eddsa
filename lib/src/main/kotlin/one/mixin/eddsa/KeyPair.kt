@@ -25,7 +25,7 @@ class KeyPair private constructor(
 ) {
     companion object {
         /** Returns a new `<publicKey / privateKey>` KeyPair.  */
-        internal fun newKeyPair(): KeyPair {
+        fun newKeyPair(): KeyPair {
             return newKeyPairFromSeed(randBytes(Field25519.FIELD_LEN))
         }
 

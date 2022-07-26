@@ -34,7 +34,7 @@ import one.mixin.eddsa.Curve25519.copyConditional
  * @see [Hisil H., Wong K.KH., Carter G., Dawson E. (2008) Twisted Edwards Curves
  *     Revisited](https://eprint.iacr.org/2008/522.pdf)
  */
-internal object Ed25519 {
+object Ed25519 {
     private const val SIGNATURE_LEN = Field25519.FIELD_LEN * 2
 
     // (x = 0, y = 1) point
