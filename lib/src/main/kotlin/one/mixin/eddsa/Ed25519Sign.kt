@@ -47,6 +47,7 @@ class Ed25519Sign private constructor(
         /**
          * @param privateKey 32-byte random sequence.
          */
+        @JvmStatic
         operator fun invoke(privateKey: ByteString): Ed25519Sign {
             require(privateKey.size == SECRET_KEY_LEN) {
                 "Given private key's length is not $SECRET_KEY_LEN"

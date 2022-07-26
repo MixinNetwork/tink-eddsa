@@ -16,3 +16,11 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
     testImplementation("com.google.code.gson:gson:2.9.0")
 }
+
+group = "com.github.MixinNetwork"
+version = "0.0.1"
+
+
+
+
+
