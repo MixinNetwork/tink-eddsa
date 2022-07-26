@@ -3,6 +3,7 @@ plugins {
 
     `java-library`
     `maven-publish`
+    `application`
 }
 
 repositories {
