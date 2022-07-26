@@ -15,7 +15,7 @@ allprojects {
 Add the dependency
 ```
 dependencies {
-    implementation 'com.github.MixinNetwork:tink-eddsa:0.0.1'
+    implementation 'com.github.MixinNetwork:tink-eddsa:0.0.2'
 }
 ```
 
