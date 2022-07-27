@@ -1,4 +1,5 @@
 # tink-eddsa
+The original Java code of this repo is from [Google Tink](https://github.com/google/tink), and has been translated to Kotlin by [Cashapp zipline](https://github.com/cashapp/zipline).
 
 ## Installation
 
@@ -15,7 +16,7 @@ allprojects {
 Add the dependency
 ```
 dependencies {
-    implementation 'com.github.MixinNetwork:tink-eddsa:0.0.2'
+    implementation 'com.github.MixinNetwork:tink-eddsa:0.0.3'
 }
 ```
 
