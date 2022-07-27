@@ -53,3 +53,12 @@ public class Example {
   }
 }
 ```
+
+## Benchmark
+
+MacBook Pro (16-inch, 2019), macOS Monterey, with 2.4GHz i9 32GB
+
+| type |    rate    | iterations    |   time  | data throughput |
+|----------|:----------:|---------------|:-------:|:---------------:|
+| sign | 140.60 MB/s | 703 iterations | 5002 ms | 703.00 MB |
+| verify | 285.20 MB/s | 1426 iterations | 5000 ms | 1.39 GB |
