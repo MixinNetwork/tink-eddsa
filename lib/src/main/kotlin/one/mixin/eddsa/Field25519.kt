@@ -30,7 +30,7 @@ package one.mixin.eddsa
  *
  * i.e. the limbs are 26, 25, 26, 25, ... bits wide.
  */
-internal object Field25519 {
+object Field25519 {
     /**
      * During Field25519 computation, the mixed radix representation may be in different forms:
      *
