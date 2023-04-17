@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.4]
+- make Field25519 public
+
 ## [0.0.3]
 
 - fix jitpack build error
