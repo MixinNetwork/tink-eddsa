@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.5]
+- lowercase groupId
+
 ## [0.0.4]
 - make Field25519 public
 
