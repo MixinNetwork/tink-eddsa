@@ -20,10 +20,19 @@ dependencies {
     testImplementation "net.i2p.crypto:eddsa:0.3.0"
 }
 
-group = 'com.github.mixinnetwork'
-version = '0.0.5'
-
 tasks.jar {
     archivesBaseName = "tink-eddsa"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = "com.github.mixinnetwork"
+            artifactId = "tink-eddsa"
+            version = '0.0.5'
+
+            from components.java
+        }
+    }
 }
 
