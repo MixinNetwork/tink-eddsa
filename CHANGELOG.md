@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.7]
+- fallback to java 1.8
+
 ## [0.0.6]
 - fix maven publish
 
