@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.6]
+- fix maven publish
+
 ## [0.0.5]
 - lowercase groupId
 
