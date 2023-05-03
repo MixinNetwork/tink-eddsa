@@ -1,4 +1,6 @@
 # Changelog
+## [0.0.8]
+- make XYZ public, comment check isOnCurve for temp
 
 ## [0.0.7]
 - fallback to java 1.8

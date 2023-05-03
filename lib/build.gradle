@@ -29,7 +29,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = "com.github.mixinnetwork"
             artifactId = "tink-eddsa"
-            version = '0.0.7'
+            version = '0.0.8'
 
             from components.java
         }
