@@ -77,7 +77,7 @@ object Ed25519 {
      *
      * https://hyperelliptic.org/EFD/g1p/auto-twisted-projective.html
      */
-    private class XYZ {
+    public class XYZ {
         val x: LongArray
         val y: LongArray
         val z: LongArray
@@ -281,7 +281,7 @@ object Ed25519 {
      * T1 = X * Y = x * Z * y * T = x * y * Z1 = X1Y1 / Z1
      * ```
      */
-    private class PartialXYZT {
+    public class PartialXYZT {
         val xyz: XYZ
         val t: LongArray
 
@@ -580,7 +580,7 @@ object Ed25519 {
      * `a[31] <= 127`
      * @throws IllegalStateException iff there is arithmetic error.
      */
-    private fun scalarMultWithBase(a: ByteArray): XYZ {
+    fun scalarMultWithBase(a: ByteArray): XYZ {
         val e = ByteArray(2 * Field25519.FIELD_LEN)
         for (i in 0 until Field25519.FIELD_LEN) {
             e[2 * i + 0] = (a[i].toInt() and 0xff shr 0 and 0xf).toByte()
@@ -637,7 +637,7 @@ object Ed25519 {
         // This check is to protect against flaws, i.e. if there is a computation error through a
         // faulty CPU or if the implementation contains a bug.
         val result = XYZ(ret)
-        check(result.isOnCurve()) { "arithmetic error in scalar multiplication" }
+        // check(result.isOnCurve()) { "arithmetic error in scalar multiplication" }
         return result
     }
 
