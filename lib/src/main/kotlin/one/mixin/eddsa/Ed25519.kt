@@ -580,7 +580,8 @@ object Ed25519 {
      * `a[31] <= 127`
      * @throws IllegalStateException iff there is arithmetic error.
      */
-    fun scalarMultWithBase(a: ByteArray): XYZ {
+    @Suppress("MemberVisibilityCanBePrivate")
+    fun scalarMultWithBase(a: ByteArray, checkOnCurve: Boolean = true): XYZ {
         val e = ByteArray(2 * Field25519.FIELD_LEN)
         for (i in 0 until Field25519.FIELD_LEN) {
             e[2 * i + 0] = (a[i].toInt() and 0xff shr 0 and 0xf).toByte()
@@ -637,7 +638,12 @@ object Ed25519 {
         // This check is to protect against flaws, i.e. if there is a computation error through a
         // faulty CPU or if the implementation contains a bug.
         val result = XYZ(ret)
-        // check(result.isOnCurve()) { "arithmetic error in scalar multiplication" }
+
+        // https://github.com/google/tink/issues/403
+        if (checkOnCurve) {
+            check(result.isOnCurve()) { "arithmetic error in scalar multiplication" }
+        }
+
         return result
     }
 
@@ -649,8 +655,8 @@ object Ed25519 {
      * Preconditions:
      * `a[31] <= 127`
      */
-    fun scalarMultWithBaseToBytes(a: ByteString): ByteString {
-        return scalarMultWithBase(a.toByteArray()).toBytes().toByteString()
+    fun scalarMultWithBaseToBytes(a: ByteString, checkOnCurve: Boolean = true): ByteString {
+        return scalarMultWithBase(a.toByteArray(), checkOnCurve).toBytes().toByteString()
     }
 
     private fun slide(a: ByteArray): ByteArray {

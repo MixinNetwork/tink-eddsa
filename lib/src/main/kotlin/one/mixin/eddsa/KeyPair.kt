@@ -19,7 +19,7 @@ import okio.ByteString
 import one.mixin.eddsa.Random.randBytes
 
 /** Defines the KeyPair consisting of a private key and its corresponding public key.  */
-class KeyPair private constructor(
+class KeyPair(
     val publicKey: ByteString,
     val privateKey: ByteString,
 ) {
@@ -31,11 +31,11 @@ class KeyPair private constructor(
         }
 
         /** Returns a new `<publicKey / privateKey>` KeyPair generated from a seed. */
-        fun newKeyPairFromSeed(secretSeed: ByteString): KeyPair {
+        fun newKeyPairFromSeed(secretSeed: ByteString, checkOnCurve: Boolean = true): KeyPair {
             require(secretSeed.size == Field25519.FIELD_LEN) {
                 "Given secret seed length is not ${Field25519.FIELD_LEN}"
             }
-            val publicKey = Ed25519.scalarMultWithBaseToBytes(Ed25519.getHashedScalar(secretSeed))
+            val publicKey = Ed25519.scalarMultWithBaseToBytes(Ed25519.getHashedScalar(secretSeed), checkOnCurve)
             return KeyPair(publicKey, secretSeed)
         }
     }
