@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.9]
+- add param 'checkOnCurve' for 'scalarMultWithBase'
+
 ## [0.0.8]
 - make XYZ public, comment check isOnCurve for temp
 
