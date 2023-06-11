@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.10]
+- add param 'checkOnCurve' for Ed25519Sign
+
 ## [0.0.9]
 - add param 'checkOnCurve' for 'scalarMultWithBase'
 
