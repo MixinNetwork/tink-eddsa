@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.11]
+- compile use JDK8
+
 ## [0.0.10]
 - add param 'checkOnCurve' for Ed25519Sign
 
