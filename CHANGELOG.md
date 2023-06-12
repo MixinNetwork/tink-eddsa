@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.12]
+- add param 'checkOnCurve' for newKeyPair
+
 ## [0.0.11]
 - compile use JDK8
 
