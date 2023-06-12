@@ -26,8 +26,8 @@ class KeyPair(
     companion object {
         /** Returns a new `<publicKey / privateKey>` KeyPair.  */
         @JvmStatic
-        fun newKeyPair(): KeyPair {
-            return newKeyPairFromSeed(randBytes(Field25519.FIELD_LEN))
+        fun newKeyPair(checkOnCurve: Boolean = true): KeyPair {
+            return newKeyPairFromSeed(randBytes(Field25519.FIELD_LEN), checkOnCurve = checkOnCurve)
         }
 
         /** Returns a new `<publicKey / privateKey>` KeyPair generated from a seed. */

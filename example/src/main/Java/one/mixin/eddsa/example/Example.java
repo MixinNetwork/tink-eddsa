@@ -7,7 +7,7 @@ import one.mixin.eddsa.KeyPair;
 
 public class Example {
   public static void main(String[] args) {
-    KeyPair keyPair = KeyPair.newKeyPair();
+    KeyPair keyPair = KeyPair.newKeyPair(true);
     Ed25519Sign signer = Ed25519Sign.invoke(keyPair.getPrivateKey(), true);
     Ed25519Verify verifier = new Ed25519Verify(keyPair.getPublicKey());
 
