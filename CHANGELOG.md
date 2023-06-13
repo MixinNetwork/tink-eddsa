@@ -1,4 +1,7 @@
 # Changelog
+## [0.0.13]
+- remove 'checkOnCurve' default value
+
 ## [0.0.12]
 - add param 'checkOnCurve' for newKeyPair
 
