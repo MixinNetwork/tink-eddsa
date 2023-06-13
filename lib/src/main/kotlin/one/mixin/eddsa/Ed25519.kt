@@ -581,7 +581,7 @@ object Ed25519 {
      * @throws IllegalStateException iff there is arithmetic error.
      */
     @Suppress("MemberVisibilityCanBePrivate")
-    fun scalarMultWithBase(a: ByteArray, checkOnCurve: Boolean = true): XYZ {
+    fun scalarMultWithBase(a: ByteArray, checkOnCurve: Boolean): XYZ {
         val e = ByteArray(2 * Field25519.FIELD_LEN)
         for (i in 0 until Field25519.FIELD_LEN) {
             e[2 * i + 0] = (a[i].toInt() and 0xff shr 0 and 0xf).toByte()
@@ -1476,7 +1476,7 @@ object Ed25519 {
      * @param hashedPrivateKey [Ed25519.getHashedScalar] of the private key
      * @return signature for the [message].
      */
-    fun sign(message: ByteString, publicKey: ByteString, hashedPrivateKey: ByteString): ByteString {
+    fun sign(message: ByteString, publicKey: ByteString, hashedPrivateKey: ByteString, checkOnCurve: Boolean): ByteString {
         val hashedPrivateKeyBytes = hashedPrivateKey.toByteArray()
         val digest = Buffer()
         digest.write(hashedPrivateKey, Field25519.FIELD_LEN, Field25519.FIELD_LEN)
@@ -1484,7 +1484,7 @@ object Ed25519 {
         val r = digest.sha512().toByteArray()
         reduce(r)
 
-        val rB = scalarMultWithBase(r).toBytes().copyOfRange(0, Field25519.FIELD_LEN)
+        val rB = scalarMultWithBase(r, checkOnCurve).toBytes().copyOfRange(0, Field25519.FIELD_LEN)
         digest.clear()
         digest.write(rB)
         digest.write(publicKey)

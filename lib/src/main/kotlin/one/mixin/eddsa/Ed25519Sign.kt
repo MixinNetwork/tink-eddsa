@@ -37,8 +37,8 @@ class Ed25519Sign private constructor(
     private val hashedPrivateKey: ByteString,
     private val publicKey: ByteString,
 ) {
-    fun sign(data: ByteString): ByteString {
-        return sign(data, publicKey, hashedPrivateKey)
+    fun sign(data: ByteString, checkOnCurve: Boolean): ByteString {
+        return sign(data, publicKey, hashedPrivateKey, checkOnCurve)
     }
 
     companion object {
@@ -48,7 +48,7 @@ class Ed25519Sign private constructor(
          * @param privateKey 32-byte random sequence.
          */
         @JvmStatic
-        operator fun invoke(privateKey: ByteString, checkOnCurve: Boolean = true): Ed25519Sign {
+        operator fun invoke(privateKey: ByteString, checkOnCurve: Boolean): Ed25519Sign {
             require(privateKey.size == SECRET_KEY_LEN) {
                 "Given private key's length is not $SECRET_KEY_LEN"
             }

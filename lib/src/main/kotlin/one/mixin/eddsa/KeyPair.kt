@@ -26,12 +26,12 @@ class KeyPair(
     companion object {
         /** Returns a new `<publicKey / privateKey>` KeyPair.  */
         @JvmStatic
-        fun newKeyPair(checkOnCurve: Boolean = true): KeyPair {
+        fun newKeyPair(checkOnCurve: Boolean): KeyPair {
             return newKeyPairFromSeed(randBytes(Field25519.FIELD_LEN), checkOnCurve = checkOnCurve)
         }
 
         /** Returns a new `<publicKey / privateKey>` KeyPair generated from a seed. */
-        fun newKeyPairFromSeed(secretSeed: ByteString, checkOnCurve: Boolean = true): KeyPair {
+        fun newKeyPairFromSeed(secretSeed: ByteString, checkOnCurve: Boolean): KeyPair {
             require(secretSeed.size == Field25519.FIELD_LEN) {
                 "Given secret seed length is not ${Field25519.FIELD_LEN}"
             }

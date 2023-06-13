@@ -12,7 +12,7 @@ public class Example {
     Ed25519Verify verifier = new Ed25519Verify(keyPair.getPublicKey());
 
     ByteString msg = ByteString.of("Hello world".getBytes());
-    ByteString sig = signer.sign(msg);
+    ByteString sig = signer.sign(msg, true);
     boolean valid = verifier.verify(sig, msg);
     System.out.println("valid: " + valid);
   }
